@@ -10,10 +10,12 @@ export default ({ env }) => ({
           },
           region: env("R2_REGION", "auto"),
           endpoint: env("R2_ENDPOINT"), // https://<accountid>.r2.cloudflarestorage.com
-          forcePathStyle: true // required for R2
-        },
-        bucket: env("R2_BUCKET")
-        // optional:
+          forcePathStyle: true, // required for R2
+          params: {
+            Bucket: env("R2_BUCKET")
+          }
+        }
+        // optional CDN-URL:
         // baseUrl: env('R2_CDN_BASE_URL'),
       },
       actionOptions: {
