@@ -514,6 +514,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    age: Schema.Attribute.String;
+    author: Schema.Attribute.String;
     body: Schema.Attribute.RichText;
     categories: Schema.Attribute.Relation<
       'manyToMany',
@@ -524,6 +526,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    format: Schema.Attribute.String;
+    illustrator: Schema.Attribute.String;
+    ISBN: Schema.Attribute.String;
+    language: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -534,11 +540,14 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    pageCount: Schema.Attribute.String;
     position: Schema.Attribute.Integer;
+    publicationYear: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    publisher: Schema.Attribute.String;
     quote: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

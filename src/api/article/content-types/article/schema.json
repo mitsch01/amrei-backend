@@ -17,7 +17,21 @@
     },
     "title": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "quote": {
+      "type": "text"
     },
     "body": {
       "type": "richtext"
@@ -32,16 +46,6 @@
         "videos"
       ]
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
     "media": {
       "type": "media",
       "multiple": true,
@@ -52,13 +56,37 @@
         "audios"
       ]
     },
-    "quote": {
-      "type": "text"
-    },
     "video": {
       "type": "component",
       "component": "shared.video",
       "repeatable": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "illustrator": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "publicationYear": {
+      "type": "string"
+    },
+    "pageCount": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "ISBN": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
     }
   }
 }
