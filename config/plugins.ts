@@ -3,6 +3,7 @@ export default ({ env }) => ({
     config: {
       provider: "aws-s3",
       providerOptions: {
+        baseUrl: env("R2_PUBLIC_URL"),
         s3Options: {
           credentials: {
             accessKeyId: env("R2_ACCESS_KEY_ID"),
@@ -15,8 +16,6 @@ export default ({ env }) => ({
             Bucket: env("R2_BUCKET")
           }
         }
-        // optional CDN-URL:
-        // baseUrl: env('R2_CDN_BASE_URL'),
       },
       actionOptions: {
         upload: {},
