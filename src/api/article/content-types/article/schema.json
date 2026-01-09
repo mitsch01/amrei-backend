@@ -17,12 +17,12 @@
     },
     "title": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "slug": {
       "type": "uid",
       "targetField": "title",
-      "required": false
+      "required": true
     },
     "categories": {
       "type": "relation",
