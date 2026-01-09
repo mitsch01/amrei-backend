@@ -32,7 +32,7 @@
     "quote": {
       "type": "text"
     },
-    "slugi": {
+    "slug": {
       "type": "uid",
       "targetField": "title",
       "required": true
