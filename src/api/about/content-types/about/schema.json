@@ -13,12 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "slug": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "body": {
       "type": "richtext"
@@ -35,6 +31,11 @@
     },
     "quote": {
       "type": "text"
+    },
+    "slugi": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }
